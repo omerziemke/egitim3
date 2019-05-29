@@ -11,4 +11,13 @@
 |
 */
 
-Route::get('/',array('as'=>'index','uses'=>'IndexController@getIndex'));
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::group(['prefix'=>'yonetim'],function ()
+{
+Route::get('/','YonetimController@index')->name('yonetim.index');
+Route::resource('ayarlar',@AyarController);
+Route::post('ayarlar/{id}','AyarController@update')->name('yonetim.ayarlar');
+
+});
