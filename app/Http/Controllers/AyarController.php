@@ -51,6 +51,10 @@ class AyarController extends Controller
     {
         //
     }
+    public function giris()
+    {
+        return view('login');
+    }
 
     /**
      * Show the form for editing the specified resource.

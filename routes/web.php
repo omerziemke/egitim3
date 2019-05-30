@@ -14,10 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login','AyarController@giris');
 Route::group(['prefix'=>'yonetim'],function ()
 {
 Route::get('/','YonetimController@index')->name('yonetim.index');
-Route::resource('ayarlar',@AyarController);
+Route::resource('ayarlar','AyarController');
 Route::post('ayarlar/{id}','AyarController@update')->name('yonetim.ayarlar');
+Route::resource('kategoriler','KategoriController');
+
 
 });
