@@ -21,7 +21,7 @@
 
 <!--Header-part-->
 <div id="header">
-    <h1><a href="dashboard.html">Ömer Ziemke</a></h1>
+    <h1><a href="dashboard.html">Okul Sitesi</a></h1>
 </div>
 <!--close-Header-part-->
 
@@ -103,18 +103,7 @@
 <script src="/admin/js/matrix.tables.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
 @include('sweetalert::alert')
-@if(alert()->flash())
-    <script>
-        swal({
-            title:'{!! alert()->message() !!}',
-            text:'{!! alert()->option !!}',
-            type:'{!! alert()->type() !!}',
 
-        });
-
-    </script>
-
-@endif
 @yield('js')
 
 
